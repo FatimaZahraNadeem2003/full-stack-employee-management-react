@@ -32,15 +32,25 @@ export const HRLogin = () => {
     }
 
     useEffect(() => {
-        if (!HRState.isAuthenticated) {
-            dispatch(HandleGetHumanResources({ apiroute: "CHECKLOGIN" }))
-        }
+        // Only check login status on initial load
+        const checkLoginStatus = async () => {
+            try {
+                await dispatch(HandleGetHumanResources({ apiroute: "CHECKLOGIN" }));
+            } catch (error) {
+                // If there's an error, it means user is not logged in, which is fine
+            }
+        };
+        
+        checkLoginStatus();
+    }, [dispatch]);
 
+    // Navigate to dashboard only when authentication status changes to true
+    useEffect(() => {
         if (HRState.isAuthenticated) {
-            loadingbar.current.complete()
-            navigate("/HR/dashboard/dashboard-data")
+            loadingbar.current.complete();
+            navigate("/HR/dashboard/dashboard-data");
         }
-    }, [HRState.isAuthenticated])
+    }, [HRState.isAuthenticated, navigate]);
 
 
     return (
