@@ -13,6 +13,13 @@ import { HRProtectedRoutes } from "./HRprotectedroutes.jsx"
 import { HREmployeesPage } from "../pages/HumanResources/Dashboard Childs/employeespage.jsx"
 import { HRDepartmentPage } from "../pages/HumanResources/Dashboard Childs/departmentpage.jsx"
 import { HRLeavesPage } from "../pages/HumanResources/Dashboard Childs/leavespage.jsx"
+import { HRSalariesPage } from "../pages/HumanResources/Dashboard Childs/salariespage.jsx"
+import { HRNoticesPage } from "../pages/HumanResources/Dashboard Childs/noticespage.jsx"
+import { HRAttendancesPage } from "../pages/HumanResources/Dashboard Childs/attendancespage.jsx"
+import { HRRecruitmentPage } from "../pages/HumanResources/Dashboard Childs/recruitmentpage.jsx"
+import { HRInterviewInsightsPage } from "../pages/HumanResources/Dashboard Childs/interviewinsightspage.jsx"
+import { HRRequestsPage } from "../pages/HumanResources/Dashboard Childs/requestspage.jsx"
+import { HRProfilesPage } from "../pages/HumanResources/Dashboard Childs/hrprofilespage.jsx"
 export const HRRoutes = [
     {
         path: "/auth/HR/signup",
@@ -41,6 +48,34 @@ export const HRRoutes = [
             {
                 path: "/HR/dashboard/leaves",
                 element: <HRLeavesPage />
+            },
+            {
+                path: "/HR/dashboard/salaries",
+                element: <HRSalariesPage />
+            },
+            {
+                path: "/HR/dashboard/notices",
+                element: <HRNoticesPage />
+            },
+            {
+                path: "/HR/dashboard/attendances",
+                element: <HRAttendancesPage />
+            },
+            {
+                path: "/HR/dashboard/recruitment",
+                element: <HRRecruitmentPage />
+            },
+            {
+                path: "/HR/dashboard/interview-insights",
+                element: <HRInterviewInsightsPage />
+            },
+            {
+                path: "/HR/dashboard/requests",
+                element: <HRRequestsPage />
+            },
+            {
+                path: "/HR/dashboard/hr-profiles",
+                element: <HRProfilesPage />
             }
         ]
     },
