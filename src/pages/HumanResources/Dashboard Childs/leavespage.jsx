@@ -23,34 +23,35 @@ export const HRLeavesPage = () => {
         if (leavesState.data && leavesState.data.length > 0) {
             console.log("Leave data:", leavesState.data);
         }
+
     }, [leavesState]);
 
     const handleApprove = (leaveId) => {
-        dispatch(HandleUpdateLeaves({ 
-            apiroute: "UPDATE", 
-            data: { 
-                leaveID: leaveId, 
-                status: "approved", 
+        dispatch(HandleUpdateLeaves({
+            apiroute: "UPDATE",
+            data: {
+                leaveID: leaveId,
+                status: "approved",
                 HRID: HRState.HRID
-            } 
+            }
         }));
     };
 
     const handleReject = (leaveId) => {
-        dispatch(HandleUpdateLeaves({ 
-            apiroute: "UPDATE", 
-            data: { 
-                leaveID: leaveId, 
-                status: "rejected", 
+        dispatch(HandleUpdateLeaves({
+            apiroute: "UPDATE",
+            data: {
+                leaveID: leaveId,
+                status: "rejected",
                 HRID: HRState.HRID
-            } 
+            }
         }));
     };
 
     const handleDelete = (leaveId) => {
-        dispatch(HandleDeleteLeaves({ 
-            apiroute: "DELETE", 
-            id: leaveId 
+        dispatch(HandleDeleteLeaves({
+            apiroute: "DELETE",
+            id: leaveId
         }));
     };
 
@@ -76,7 +77,7 @@ export const HRLeavesPage = () => {
         <div className="leaves-page-content w-full mx-auto my-10 flex flex-col gap-5 h-[94%]">
             <div className="leaves-heading flex justify-between items-center md:pe-5">
                 <h1 className="min-[250px]:text-xl md:text-4xl font-bold">Leave Requests</h1>
-                <button 
+                <button
                     onClick={handleRefresh}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 >
@@ -88,8 +89,8 @@ export const HRLeavesPage = () => {
                     <HeadingBar table_layout={"grid-cols-7"} table_headings={table_headings} />
                 </ListWrapper>
                 <ListContainer>
-                    <LeaveListItems 
-                        TargetedState={leavesState} 
+                    <LeaveListItems
+                        TargetedState={leavesState}
                         onApprove={handleApprove}
                         onReject={handleReject}
                         onDelete={handleDelete}

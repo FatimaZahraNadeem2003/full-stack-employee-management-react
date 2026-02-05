@@ -98,7 +98,6 @@ export const HRAsyncReducer = (builder, thunk) => {
                 state.error.status = false;
                 state.data = action.payload;
             }
-            // Handle leave data
             if (action.payload.data && Array.isArray(action.payload.data)) {
                 state.isLoading = false;
                 state.error.status = false;
