@@ -54,6 +54,7 @@ export const HRAsyncReducer = (builder, thunk) => {
                 state.isLoading = false;
                 state.isAuthenticated = true
                 state.isAuthourized = true
+                state.HRID = action.payload.HRID || null;
                 state.error.status = false;
                 state.data = action.payload;
             }
@@ -96,6 +97,12 @@ export const HRAsyncReducer = (builder, thunk) => {
                 state.isVerifiedEmailAvailable = true
                 state.error.status = false;
                 state.data = action.payload;
+            }
+            // Handle leave data
+            if (action.payload.data && Array.isArray(action.payload.data)) {
+                state.isLoading = false;
+                state.error.status = false;
+                state.data = action.payload.data;
             }
         })
         .addCase(thunk.rejected, (state, action) => {
@@ -260,5 +267,25 @@ export const EmployeesIDsAsyncReducer = (builder, thunk) => {
         state.error.status = true;
         state.error.message = action.payload.message
         state.error.content = action.payload
+    })
+}
+
+export const LeavesAsyncReducer = (builder, thunk) => {
+    builder.addCase(thunk.pending, (state) => {
+        state.isLoading = true;
+        state.error.content = null;
+    })
+    builder.addCase(thunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error.status = false;
+        state.data = action.payload.data || action.payload;
+        console.log("Leaves data set:", action.payload.data || action.payload);
+    })
+    builder.addCase(thunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error.status = true;
+        state.error.message = action.payload.message || action.payload;
+        state.error.content = action.payload;
+        console.error("Leaves error:", action.payload);
     })
 }

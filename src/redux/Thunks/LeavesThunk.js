@@ -4,13 +4,16 @@ import { LeavesEndPoints } from "../apis/APIsEndpoints";
 
 export const HandleGetAllLeaves = createAsyncThunk("HandleGetAllLeaves", async (leaveData, { rejectWithValue }) => {
     try {
+        console.log("Making API call to get all leaves...");
         const { apiroute, data } = leaveData;
         const response = await apiService.get(`${LeavesEndPoints[apiroute]}`, {
             withCredentials: true
         });
+        console.log("API response:", response.data);
         return response.data;
     } catch (error) {
-        return rejectWithValue(error.response.data);
+        console.error("Error fetching leaves:", error);
+        return rejectWithValue(error.response ? error.response.data : error.message);
     }
 });
 

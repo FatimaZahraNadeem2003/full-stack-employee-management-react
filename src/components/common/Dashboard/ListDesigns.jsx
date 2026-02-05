@@ -79,10 +79,10 @@ export const DepartmentListItems = ({ TargetedState }) => {
     )
 }
 
-export const LeaveListItems = ({ TargetedState }) => {
+export const LeaveListItems = ({ TargetedState, onApprove, onReject, onDelete }) => {
     return (
         <>
-            {TargetedState.data && TargetedState.data.length > 0 ? TargetedState.data.map((item) => <div className={`list-item-container grid min-[250px]:grid-cols-2 sm:grid-cols-6 py-1 gap-2 justify-center items-center border-b-2 border-blue-800`}>
+            {TargetedState.data && TargetedState.data.length > 0 ? TargetedState.data.map((item) => <div className={`list-item-container grid min-[250px]:grid-cols-2 sm:grid-cols-7 py-1 gap-2 justify-center items-center border-b-2 border-blue-800`}>
                 <div className="heading-content font-bold min-[250px]:text-sm sm:text-xs lg:text-sm xl:text-lg p-2 rounded-lg text-start overflow-hidden text-ellipsis">
                     {item.employee ? `${item.employee.firstname} ${item.employee.lastname}` : "Unknown Employee"}
                 </div>
@@ -102,6 +102,30 @@ export const LeaveListItems = ({ TargetedState }) => {
                     <span className={`px-2 py-1 rounded-full ${item.status === "approved" ? "bg-green-200 text-green-800" : item.status === "rejected" ? "bg-red-200 text-red-800" : "bg-yellow-200 text-yellow-800"}`}>
                         {item.status || "pending"}
                     </span>
+                </div>
+                <div className="heading-content font-bold min-[250px]:text-sm sm:text-xs lg:text-sm xl:text-lg p-2 rounded-lg text-center overflow-hidden text-ellipsis flex gap-1">
+                    {item.status === "pending" && (
+                        <>
+                            <button 
+                                onClick={() => onApprove && onApprove(item._id)}
+                                className="px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600 text-xs"
+                            >
+                                Approve
+                            </button>
+                            <button 
+                                onClick={() => onReject && onReject(item._id)}
+                                className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-xs"
+                            >
+                                Reject
+                            </button>
+                        </>
+                    )}
+                    <button 
+                        onClick={() => onDelete && onDelete(item._id)}
+                        className="px-2 py-1 bg-gray-500 text-white rounded hover:bg-gray-600 text-xs"
+                    >
+                        Delete
+                    </button>
                 </div>
             </div>) : 
             <div className="p-4 text-center text-gray-500">No leave requests found</div>}
