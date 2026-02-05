@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { HRAsyncReducer } from "../AsyncReducers/asyncreducer.js";
+import { LeavesAsyncReducer } from "../AsyncReducers/asyncreducer.js";
 import { HandleGetAllLeaves, HandlePostLeaves, HandleUpdateLeaves, HandleDeleteLeaves } from "../Thunks/LeavesThunk.js";
 
 const LeavesSlice = createSlice({
@@ -14,10 +14,10 @@ const LeavesSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        HRAsyncReducer(builder, HandleGetAllLeaves);
-        HRAsyncReducer(builder, HandlePostLeaves);
-        HRAsyncReducer(builder, HandleUpdateLeaves);
-        HRAsyncReducer(builder, HandleDeleteLeaves);
+        LeavesAsyncReducer(builder, HandleGetAllLeaves);
+        LeavesAsyncReducer(builder, HandlePostLeaves);
+        LeavesAsyncReducer(builder, HandleUpdateLeaves);
+        LeavesAsyncReducer(builder, HandleDeleteLeaves);
     }
 });
 

@@ -6,6 +6,7 @@ const HRSlice = createSlice({
     name: "HumanResources",
     initialState: {
         data: null,
+        HRID: null,
         isLoading: false,
         isAuthenticated: false,
         isSignUp: false,
