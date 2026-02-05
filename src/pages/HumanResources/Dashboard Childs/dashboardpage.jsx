@@ -24,12 +24,12 @@ export const HRDashboardPage = () => {
         {
             image: "/../../src/assets/HR-Dashboard/leave.png",
             dataname: "leaves",
-            path: "/HR/dashboard/leaves"
+            path: "/HR/dashboard/Leaves"
         },
         {
             image: "/../../src/assets/HR-Dashboard/request.png",
             dataname: "requestes",
-            path: "/HR/dashboard/requests"
+            path: "/HR/dashboard/Requests"
         }
     ]
 
