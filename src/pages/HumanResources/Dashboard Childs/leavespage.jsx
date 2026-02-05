@@ -20,6 +20,9 @@ export const HRLeavesPage = () => {
 
     useEffect(() => {
         console.log("Leaves state:", leavesState);
+        if (leavesState.data && leavesState.data.length > 0) {
+            console.log("Leave data:", leavesState.data);
+        }
     }, [leavesState]);
 
     const handleApprove = (leaveId) => {
@@ -65,10 +68,20 @@ export const HRLeavesPage = () => {
         );
     }
 
+    const handleRefresh = () => {
+        dispatch(HandleGetAllLeaves({ apiroute: "GETALL" }));
+    };
+
     return (
         <div className="leaves-page-content w-full mx-auto my-10 flex flex-col gap-5 h-[94%]">
             <div className="leaves-heading flex justify-between items-center md:pe-5">
                 <h1 className="min-[250px]:text-xl md:text-4xl font-bold">Leave Requests</h1>
+                <button 
+                    onClick={handleRefresh}
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                    Refresh
+                </button>
             </div>
             <div className="leaves-data flex flex-col gap-4 md:pe-5 overflow-auto">
                 <ListWrapper>
