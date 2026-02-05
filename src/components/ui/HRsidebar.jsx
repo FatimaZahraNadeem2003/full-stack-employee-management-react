@@ -55,12 +55,14 @@ export function HRdashboardSidebar() {
 
                             </NavLink>
 
-                            <SidebarMenuItem className="my-1">
-                                <SidebarMenuButton className="gap-4">
-                                    <img src="/../../src/assets/HR-Dashboard/salary.png" alt="" className="w-7" />
-                                    <button className="text-[16px]">Salaries</button>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
+                            <NavLink to="#" className={({ isActive }) => { return isActive ? "bg-blue-200 rounded-lg" : "" }}>
+                                <SidebarMenuItem className="my-1">
+                                    <SidebarMenuButton className="gap-4">
+                                        <img src="/../../src/assets/HR-Dashboard/salary.png" alt="" className="w-7" />
+                                        <button className="text-[16px]">Salaries</button>
+                                    </SidebarMenuButton>
+                                </SidebarMenuItem>
+                            </NavLink>
 
                             <SidebarMenuItem className="my-1">
                                 <SidebarMenuButton className="gap-4">
