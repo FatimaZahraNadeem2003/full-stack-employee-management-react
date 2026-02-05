@@ -32,15 +32,22 @@ export const HRLogin = () => {
     }
 
     useEffect(() => {
-        if (!HRState.isAuthenticated) {
-            dispatch(HandleGetHumanResources({ apiroute: "CHECKLOGIN" }))
-        }
+        const checkLoginStatus = async () => {
+            try {
+                await dispatch(HandleGetHumanResources({ apiroute: "CHECKLOGIN" }));
+            } catch (error) {
+            }
+        };
+        
+        checkLoginStatus();
+    }, [dispatch]);
 
+    useEffect(() => {
         if (HRState.isAuthenticated) {
-            loadingbar.current.complete()
-            navigate("/HR/dashboard/dashboard-data")
+            loadingbar.current.complete();
+            navigate("/HR/dashboard/dashboard-data");
         }
-    }, [HRState.isAuthenticated])
+    }, [HRState.isAuthenticated, navigate]);
 
 
     return (
