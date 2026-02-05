@@ -55,7 +55,7 @@ export function HRdashboardSidebar() {
 
                             </NavLink>
 
-                            <NavLink to="#" className={({ isActive }) => { return isActive ? "bg-blue-200 rounded-lg" : "" }}>
+                            <NavLink to="/HR/dashboard/salaries" className={({ isActive }) => { return isActive ? "bg-blue-200 rounded-lg" : "" }}>
                                 <SidebarMenuItem className="my-1">
                                     <SidebarMenuButton className="gap-4">
                                         <img src="/../../src/assets/HR-Dashboard/salary.png" alt="" className="w-7" />
