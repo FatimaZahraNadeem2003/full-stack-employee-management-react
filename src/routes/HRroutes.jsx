@@ -13,6 +13,7 @@ import { HRProtectedRoutes } from "./HRprotectedroutes.jsx"
 import { HREmployeesPage } from "../pages/HumanResources/Dashboard Childs/employeespage.jsx"
 import { HRDepartmentPage } from "../pages/HumanResources/Dashboard Childs/departmentpage.jsx"
 import { HRLeavesPage } from "../pages/HumanResources/Dashboard Childs/leavespage.jsx"
+import { HRSalariesPage } from "../pages/HumanResources/Dashboard Childs/salariespage.jsx"
 export const HRRoutes = [
     {
         path: "/auth/HR/signup",
@@ -41,6 +42,10 @@ export const HRRoutes = [
             {
                 path: "/HR/dashboard/leaves",
                 element: <HRLeavesPage />
+            },
+            {
+                path: "/HR/dashboard/salaries",
+                element: <HRSalariesPage />
             }
         ]
     },
