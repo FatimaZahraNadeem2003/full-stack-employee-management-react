@@ -11,7 +11,7 @@ export const EntryPage = () => {
                 </div>
                 <div className="buttons flex justify-center placeholder:items-center gap-5">
                     <Link to={"/auth/employee/login"}><Button className="bg-purple-600 text-white font-bold text-lg">Employee</Button></Link>
-                    <Link to={"/auth/HR/signup"}><Button className="bg-purple-600 text-white font-bold text-lg">HR-Admin</Button> </Link>
+                    <Link to={"/auth/HR/login"}><Button className="bg-purple-600 text-white font-bold text-lg">HR-Admin</Button> </Link>
                 </div>
             </div>
         </div >
