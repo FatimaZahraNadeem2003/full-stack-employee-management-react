@@ -29,7 +29,7 @@ export const HRDashboardPage = () => {
         {
             image: "/../../src/assets/HR-Dashboard/request.png",
             dataname: "requestes",
-            path: "/HR/dashboard/requestes"
+            path: "/HR/dashboard/requests"
         }
     ]
 
