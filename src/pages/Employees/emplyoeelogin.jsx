@@ -30,7 +30,7 @@ export const EmployeeLogin = () => {
 
     const RedirectToDashbaord = () => {
         loadingbar.current.complete()
-        navigate("/auth/employee/employee-dashboard")
+        navigate("/employee/dashboard")
     }
 
     if (EmployeeState.error.status) {

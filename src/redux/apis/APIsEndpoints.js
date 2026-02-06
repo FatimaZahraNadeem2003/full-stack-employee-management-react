@@ -2,7 +2,8 @@ export const APIsEndPoints = {
     LOGIN: "/api/auth/employee/login",
     CHECKELOGIN: "/api/auth/employee/check-login",
     FORGOT_PASSWORD: "/api/auth/employee/forgot-password",
-    RESET_PASSWORD: (token) => `/api/auth/employee/reset-password/${token}`
+    RESET_PASSWORD: (token) => `/api/auth/employee/reset-password/${token}`,
+    LOGOUT: "/api/auth/employee/logout"
 }
 
 export const HREndPoints = {
