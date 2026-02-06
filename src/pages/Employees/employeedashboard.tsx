@@ -1,5 +1,5 @@
-import { EmployeeDashboardSidebar } from "@/components/ui/Employeesidebar"
-import { Outlet } from "react-router-dom"
+import { EmployeeDashboardSidebar } from "@/components/ui/Employeesidebar";
+import { Outlet } from "react-router-dom";
 
 export const EmployeeDashboard = () => {
     return (
@@ -9,5 +9,5 @@ export const EmployeeDashboard = () => {
                 <Outlet />
             </main>
         </div>
-    )
-}
+    );
+};

@@ -1,15 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import EmployeeReducer from "../Slices/EmployeeSlice"
-import HRReducer from '../Slices/HRSlice'
-import DashbaordReducer from "../Slices/DashboardSlice"
-import HREmployeesPageReducer from '../Slices/HREmployeesPageSlice'
-import HRDepartmentPageReducer from '../Slices/HRDepartmentPageSlice'
-import EMployeesIDReducer from '../Slices/EmployeesIDsSlice'
-import LeavesReducer from '../Slices/LeavesSlice'
-import SalaryReducer from '../Slices/SalarySlice'
-import NoticeReducer from '../Slices/NoticeSlice'
-import AttendanceReducer from '../Slices/AttendanceSlice'
-import DepartmentReducer from '../Slices/DepartmentSlice'
+import HRReducer from '../Slices/HRSlice.ts'
+import DashbaordReducer from "../Slices/DashboardSlice.ts"
+import HREmployeesPageReducer from '../Slices/HREmployeesPageSlice.ts'
+import HRDepartmentPageReducer from '../Slices/HRDepartmentPageSlice.ts'
+import EMployeesIDReducer from '../Slices/EmployeesIDsSlice.ts'
+import LeavesReducer from '../Slices/LeavesSlice.ts'
+import SalaryReducer from '../Slices/SalarySlice.ts'
+import NoticeReducer from '../Slices/NoticeSlice.ts'
+import AttendanceReducer from '../Slices/AttendanceSlice.ts'
+import DepartmentReducer from '../Slices/DepartmentSlice.ts'
 
 export const store = configureStore({
     reducer: {
@@ -26,3 +26,8 @@ export const store = configureStore({
         DepartmentReducer: DepartmentReducer
     }
 })
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch
