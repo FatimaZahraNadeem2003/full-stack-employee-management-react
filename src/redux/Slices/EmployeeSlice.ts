@@ -16,6 +16,7 @@ const EmployeeSlice = createSlice({
             content: null
         }
     },
+    reducers: {},
     extraReducers: (builder) => {
         AsyncReducer(builder, HandlePostEmployees); 
         AsyncReducer(builder, HandleGetEmployees);

@@ -7,13 +7,25 @@ export const AsyncReducer = (builder, thunk) => {
         .addCase(thunk.fulfilled, (state, action) => {
             state.isLoading = false;
             state.error.status = false;
-            state.data = action.payload;
-            if (action.payload.resetpassword) {
-                state.isAuthenticated = false;
-                state.isResetPasswords = action.payload.success
-            }
-            else {
-                state.isAuthenticated = action.payload.success;
+            
+            // Check if this is a profile update action
+            if (action.type.includes('HandlePatchEmployees')) {
+                // If it's an update action, merge the updated data with existing data
+                if (action.payload.success && action.payload.data) {
+                    // Update the existing data with the new values
+                    state.data = { ...state.data, ...action.payload.data };
+                }
+            } else {
+                // For other actions, use the original behavior
+                state.data = action.payload;
+                
+                if (action.payload.resetpassword) {
+                    state.isAuthenticated = false;
+                    state.isResetPasswords = action.payload.success
+                }
+                else {
+                    state.isAuthenticated = action.payload.success;
+                }
             }
         })
         .addCase(thunk.rejected, (state, action) => {
