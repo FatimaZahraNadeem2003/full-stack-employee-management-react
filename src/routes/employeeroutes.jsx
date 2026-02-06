@@ -5,12 +5,23 @@ import { ForgotPassword } from "../pages/Employees/forgotpassword.jsx"
 import { ResetEmailConfirm } from "../pages/Employees/resetemailconfirm.jsx"
 import { ResetPassword } from "../pages/Employees/resetpassword.jsx"
 import { EntryPage } from "../pages/Employees/EntryPage.jsx"
+import { EmployeeProfilePage } from "../pages/Employees/DashboardChilds/profilepage.jsx"
+import { EmployeeLeavesPage } from "../pages/Employees/DashboardChilds/leavespage.jsx"
+import { EmployeeSalaryPage } from "../pages/Employees/DashboardChilds/salarypage.jsx"
+import { EmployeeNoticesPage } from "../pages/Employees/DashboardChilds/noticespage.jsx"
+import { EmployeeAttendancePage } from "../pages/Employees/DashboardChilds/attendancepage.jsx"
+import { EmployeeDepartmentPage } from "../pages/Employees/DashboardChilds/departmentpage.jsx"
 // import { VerifyEmailPage } from "../pages/common/verifyemailpage.jsx"
+import { EmployeeSignup } from "../pages/Employees/employeesignup.jsx"
 
 export const EmployeeRoutes = [
     {
         path: "/",
         element: <EntryPage />
+    },
+    {
+        path: "/auth/employee/signup",
+        element: <EmployeeSignup />
     },
     {
         path: "/auth/employee/login",
@@ -21,8 +32,34 @@ export const EmployeeRoutes = [
     //     element: <VerifyEmailPage />
     // },
     {
-        path: "/auth/employee/employee-dashboard",
-        element: <ProtectedRoutes> <EmployeeDashboard /> </ProtectedRoutes>
+        path: "/employee/dashboard",
+        element: <ProtectedRoutes> <EmployeeDashboard /> </ProtectedRoutes>,
+        children: [
+            {
+                path: "/employee/dashboard/profile",
+                element: <EmployeeProfilePage />
+            },
+            {
+                path: "/employee/dashboard/leaves",
+                element: <EmployeeLeavesPage />
+            },
+            {
+                path: "/employee/dashboard/salary",
+                element: <EmployeeSalaryPage />
+            },
+            {
+                path: "/employee/dashboard/notices",
+                element: <EmployeeNoticesPage />
+            },
+            {
+                path: "/employee/dashboard/attendance",
+                element: <EmployeeAttendancePage />
+            },
+            {
+                path: "/employee/dashboard/departments",
+                element: <EmployeeDepartmentPage />
+            }
+        ]
     },
     {
         path: "/auth/employee/forgot-password",
@@ -37,4 +74,3 @@ export const EmployeeRoutes = [
         element: <ResetPassword /> 
     },
 ]
-
