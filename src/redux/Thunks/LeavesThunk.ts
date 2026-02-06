@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { apiService } from "../apis/apiService";
+import { apiService } from "../apis/APIService";
 import { LeavesEndPoints } from "../apis/APIsEndpoints";
 
-export const HandleGetAllLeaves = createAsyncThunk("HandleGetAllLeaves", async (leaveData, { rejectWithValue }) => {
+export const HandleGetAllLeaves = createAsyncThunk("HandleGetAllLeaves", async (leaveData: any, { rejectWithValue }) => {
     try {
         console.log("Making API call to get all leaves...");
         const { apiroute, data } = leaveData;
@@ -11,44 +11,44 @@ export const HandleGetAllLeaves = createAsyncThunk("HandleGetAllLeaves", async (
         });
         console.log("API response:", response.data);
         return response.data;
-    } catch (error) {
+    } catch (error: any) {
         console.error("Error fetching leaves:", error);
         return rejectWithValue(error.response ? error.response.data : error.message);
     }
 });
 
-export const HandlePostLeaves = createAsyncThunk("HandlePostLeaves", async (leaveData, { rejectWithValue }) => {
+export const HandlePostLeaves = createAsyncThunk("HandlePostLeaves", async (leaveData: any, { rejectWithValue }) => {
     try {
         const { apiroute, data } = leaveData;
         const response = await apiService.post(`${LeavesEndPoints[apiroute]}`, data, {
             withCredentials: true
         });
         return response.data;
-    } catch (error) {
+    } catch (error: any) {
         return rejectWithValue(error.response.data);
     }
 });
 
-export const HandleUpdateLeaves = createAsyncThunk("HandleUpdateLeaves", async (leaveData, { rejectWithValue }) => {
+export const HandleUpdateLeaves = createAsyncThunk("HandleUpdateLeaves", async (leaveData: any, { rejectWithValue }) => {
     try {
         const { apiroute, data } = leaveData;
         const response = await apiService.patch(`${LeavesEndPoints[apiroute]}`, data, {
             withCredentials: true
         });
         return response.data;
-    } catch (error) {
+    } catch (error: any) {
         return rejectWithValue(error.response.data);
     }
 });
 
-export const HandleDeleteLeaves = createAsyncThunk("HandleDeleteLeaves", async (leaveData, { rejectWithValue }) => {
+export const HandleDeleteLeaves = createAsyncThunk("HandleDeleteLeaves", async (leaveData: any, { rejectWithValue }) => {
     try {
         const { apiroute, id } = leaveData;
         const response = await apiService.delete(`${LeavesEndPoints[apiroute]}/${id}`, {
             withCredentials: true
         });
         return response.data;
-    } catch (error) {
+    } catch (error: any) {
         return rejectWithValue(error.response.data);
     }
 });
