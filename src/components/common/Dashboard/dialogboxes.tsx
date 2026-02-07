@@ -12,12 +12,7 @@ import { useState, useEffect } from "react"
 import { CommonStateHandler } from "../../../utils/commonhandler"
 import { useSelector } from "react-redux"
 
-interface AddEmployeesDialogBoxProps {
-    DepartmentID?: string
-    DepartmentName?: string
-}
-
-export const AddEmployeesDialogBox = ({ DepartmentID, DepartmentName }: AddEmployeesDialogBoxProps) => {
+export const AddEmployeesDialogBox = () => {
     const HREmployeesState = useSelector((state: any) => state.HREmployeesPageReducer)
     const [formdata, setformdata] = useState({
         firstname: "",
@@ -33,7 +28,6 @@ export const AddEmployeesDialogBox = ({ DepartmentID, DepartmentName }: AddEmplo
     }
 
     const SubmitFormData = () => {
-        // Implement form submission logic
     }
 
     const [HREmployeesStateError, setHREmployeesStateError] = useState<any>(null)

@@ -1,6 +1,5 @@
 import { createAsyncThunk, ActionReducerMapBuilder } from "@reduxjs/toolkit";
 
-// Define a generic type for our state
 interface BaseState {
     isLoading: boolean;
     error: {
@@ -26,7 +25,6 @@ interface EmployeeState extends BaseState {
     departmentData?: any;
 }
 
-// Define the payload type
 interface ActionPayload {
     type?: string;
     success?: boolean;
@@ -50,15 +48,11 @@ export const AsyncReducer = (builder: ActionReducerMapBuilder<EmployeeState>, th
             state.isLoading = false;
             state.error.status = false;
             
-            // Check if this is a profile update action
             if (action.type.includes('HandlePatchEmployees')) {
-                // If it's an update action, merge the updated data with existing data
                 if (payload.success && payload.data) {
-                    // Update the existing data with the new values
                     state.data = { ...state.data, ...payload.data };
                 }
             } else {
-                // For other actions, use the original behavior
                 state.data = payload;
                 
                 if (payload.resetpassword) {

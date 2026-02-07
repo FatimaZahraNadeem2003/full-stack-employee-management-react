@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/button"
 import { useState, useEffect, useRef } from "react"
 import { CommonStateHandler } from "../../../utils/commonhandler"
 import { useDispatch, useSelector } from "react-redux"
-// Removed circular import
 import { Loading } from "../loading"
 import { HandleDeleteHREmployees } from "../../../redux/Thunks/HREmployeesThunk"
 import { HandlePostHRDepartments, HandlePatchHRDepartments, HandleDeleteHRDepartments } from "../../../redux/Thunks/HRDepartmentPageThunk"
@@ -29,7 +28,6 @@ import {
 } from "@/components/ui/command"
 import { fetchEmployeesIDs } from "../../../redux/Thunks/EmployeesIDsThunk"
 
-// Add proper types for the props
 interface AddEmployeesDialogBoxProps {
     DepartmentID: string
     DepartmentName: string
