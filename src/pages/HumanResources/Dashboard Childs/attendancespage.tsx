@@ -4,7 +4,7 @@ import { ListContainer } from "../../../components/common/Dashboard/ListDesigns"
 
 export const HRAttendancesPage = () => {
   // const attendancesState = useSelector((state) => state.AttendancesReducer);
-  const table_headings = ["Employee", "Date", "Status", "Check-in", "Check-out"];
+  // const table_headings = ["Employee", "Date", "Status", "Check-in", "Check-out"];
 
   // useEffect(() => {
   //     dispatch(HandleGetAllAttendances({ apiroute: "GETALL" }));

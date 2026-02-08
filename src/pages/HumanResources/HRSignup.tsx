@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import LoadingBar from 'react-top-loading-bar';
 import { useNavigate } from 'react-router-dom';
 import { CommonStateHandler } from "../../utils/commonhandler";
-import { HandlePostHumanResources, HandleGetHumanResources } from "../../redux/Thunks/HRThunk";
+import { HandlePostHumanResources } from "../../redux/Thunks/HRThunk";
 
 export const HRSignupPage = () => {
   const HRState = useSelector((state: any) => state.HRReducer);
-  const [errorpopup, seterrorpopup] = useState(false);
+  // const [errorpopup, seterrorpopup] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loadingbar = useRef(null);
@@ -33,7 +33,7 @@ export const HRSignupPage = () => {
   const handlesubmitform = (event: React.FormEvent) => {
     if (signupform.textpassword === signupform.password) {
       event.preventDefault();
-      seterrorpopup(false);
+
       if (loadingbar.current) {
         (loadingbar.current as any).continuousStart();
       }
@@ -41,7 +41,7 @@ export const HRSignupPage = () => {
     }
     else {
       event.preventDefault();
-      seterrorpopup(true);
+
     }
   };
 
@@ -64,7 +64,14 @@ export const HRSignupPage = () => {
   return (
     <div className="HRsignup-page-container h-screen flex justify-center min-[900px]:justify-center min-[900px]:items-center">
       <LoadingBar ref={loadingbar} />
-      <SignUP stateformdata={signupform} handlesignupform={handlesignupform} handlesubmitform={handlesubmitform} errorpopup={errorpopup} />
+      <SignUP 
+        image={"../../src/assets/verify-email.png"} 
+        handlesignupform={handlesignupform} 
+        handlesignupsubmit={handlesubmitform} 
+        targetedstate={HRState} 
+        statevalue={signupform} 
+        redirectpath="/auth/HR/login" 
+      />
     </div>
   );
 };

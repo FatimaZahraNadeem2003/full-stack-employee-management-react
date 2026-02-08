@@ -1,6 +1,6 @@
 import { HRSignupPage } from "../pages/HumanResources/HRSignup.jsx"
 import { HRLogin } from "../pages/HumanResources/HRlogin.jsx"
-import { HRDashboard } from "../pages/HumanResources/HRdashbaord.tsx"
+import { HRDashbaord } from "../pages/HumanResources/HRdashbaord.tsx"
 import { VerifyEmailPage } from "../pages/HumanResources/verifyemailpage.jsx"
 // import { ResetEmailConfirm } from "../pages/Employees/resetemailconfirm"
 // import { ResetEmailVerification } from "../pages/HumanResources/resendemailverificaiton"
@@ -31,7 +31,7 @@ export const HRRoutes = [
     },
     {
         path: "/HR/dashboard",
-        element: <HRDashboard />,
+        element: <HRDashbaord />,
         children: [
             {
                 path: "/HR/dashboard/dashboard-data",
