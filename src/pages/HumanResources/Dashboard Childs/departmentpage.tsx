@@ -1,6 +1,5 @@
-import { HRDepartmentTabs } from "../../../components/common/Dashboard/departmenttabs";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { HRDepartmentTabs } from "../../../components/common/Dashboard/departmentTabs";
+
 import { CreateDepartmentDialogBox } from "../../../components/common/Dashboard/dialogboxes";
 
 export const HRDepartmentPage = () => {
@@ -12,7 +11,9 @@ export const HRDepartmentPage = () => {
         </h1>
         <CreateDepartmentDialogBox />
       </div>
-      <HRDepartmentTabs />
+      <HRDepartmentTabs 
+        tabs={[{ value: "overview", label: "Overview", content: <div>Department overview content</div> }]} 
+      />
     </div>
   );
 };
