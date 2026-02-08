@@ -33,7 +33,7 @@ export const HRSignupPage = () => {
   const handlesubmitform = (event: React.FormEvent) => {
     if (signupform.textpassword === signupform.password) {
       event.preventDefault();
-      seterrorpopup(false);
+
       if (loadingbar.current) {
         (loadingbar.current as any).continuousStart();
       }
@@ -41,7 +41,7 @@ export const HRSignupPage = () => {
     }
     else {
       event.preventDefault();
-      seterrorpopup(true);
+
     }
   };
 
@@ -71,7 +71,6 @@ export const HRSignupPage = () => {
         targetedstate={HRState} 
         statevalue={signupform} 
         redirectpath="/auth/HR/login" 
-        errorpopup={errorpopup} 
       />
     </div>
   );
