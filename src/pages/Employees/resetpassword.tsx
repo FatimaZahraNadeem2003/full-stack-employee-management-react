@@ -11,7 +11,7 @@ export const ResetPasswordPage = () => {
   const navigate = useNavigate();
   const loadingbar = useRef(null);
   const { token } = useParams<{ token: string }>();
-  const [passworderror, setpassworderror] = useState(false);
+  // const [passworderror, setpassworderror] = useState(false);
   const [passwordform, setpasswordform] = useState({
     password: "",
     repeatpassword: ""
@@ -23,12 +23,12 @@ export const ResetPasswordPage = () => {
       if (loadingbar.current) {
         (loadingbar.current as any).continuousStart();
       }
-      setpassworderror(false);
+
       dispatch(HandlePostEmployees({ apiroute: token, data: { password: passwordform.password }, type: "resetpassword" }) as any);
     }
     else {
       e.preventDefault();
-      setpassworderror(true) 
+ 
     }
   };
 
@@ -58,7 +58,7 @@ export const ResetPasswordPage = () => {
           handleresetpasswordform={handlepasswordform} 
           handleresetpasswordsubmit={handlepasswordsubmit} 
           targetedstate={employeestate} 
-          statevalue={passwordform} 
+          statevalue={passwordform}
         />
       </div>
     </div>
