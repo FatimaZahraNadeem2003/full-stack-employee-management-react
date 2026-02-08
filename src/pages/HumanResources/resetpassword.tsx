@@ -1,4 +1,4 @@
-import { Reset_Password } from "../../components/common/reset-password";
+import { ResetPassword } from "../../components/common/reset-password";
 import { useState, useEffect, useRef } from "react";
 // import { SignIn } from "../../components/common/sign-in.jsx"
 import { useDispatch, useSelector } from "react-redux";
@@ -57,7 +57,13 @@ export const ResetHRPasswordPage = () => {
     <div className="reset-password-container">
       <LoadingBar ref={loadingbar} />
       <div className="reset-password-content flex justify-center items-center h-[100vh]">
-        <Reset_Password handlepasswordsubmit={handlepasswordsubmit} handlepasswordform={handlepasswordform} passworderror={passworderror} targetstate={HRState} />
+        <ResetPassword 
+          image={"../../src/assets/verify-email.png"} 
+          handleresetpasswordform={handlepasswordform} 
+          handleresetpasswordsubmit={handlepasswordsubmit} 
+          targetedstate={HRState} 
+          statevalue={passwordform} 
+        />
       </div>
     </div>
   );

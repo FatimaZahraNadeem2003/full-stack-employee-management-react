@@ -1,4 +1,4 @@
-import { Verify_Email_Component } from "../../components/common/verify-email";
+import { VerifyEmail } from "../../components/common/verify-email";
 import { useState, useEffect, useRef } from "react";
 // import { SignIn } from "../../components/common/sign-in.jsx"
 import { useDispatch, useSelector } from "react-redux";
@@ -12,19 +12,20 @@ export const VerifyEmailPage = () => {
   // const [errorpopup, seterrorpopup] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [checkHREmail, setcheckHREmail] = useState(false);
+  // const [checkHREmail, setcheckHREmail] = useState(false);
   const loadingbar = useRef(null);
-  const [verificationcode, setverificationcode] = useState("");
+  const [verificationData, setverificationData] = useState({ verificationcode: "" });
 
-  const handleCodeValue = (value: string) => {
-    setverificationcode(value);
+  const handleCodeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setverificationData({ ...verificationData, [event.target.name]: event.target.value });
   };
 
-  const handleOTPsubmit = () => {
+  const handleOTPsubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     if (loadingbar.current) {
       (loadingbar.current as any).continuousStart();
     }
-    dispatch(HandlePostHumanResources({ apiroute: "VERIFY_EMAIL", data: { verificationcode: verificationcode } }) as any);
+    dispatch(HandlePostHumanResources({ apiroute: "VERIFY_EMAIL", data: verificationData }) as any);
   };
 
   useEffect(() => {
@@ -51,7 +52,13 @@ export const VerifyEmailPage = () => {
   return (
     <>
       <LoadingBar ref={loadingbar} />
-      <Verify_Email_Component handleCodeValue={handleCodeValue} value={verificationcode} handleOTPsubmit={handleOTPsubmit} />
+      <VerifyEmail 
+        image={"../../src/assets/verify-email.png"} 
+        handleverifyemailform={handleCodeValue} 
+        handleverifyemailsubmit={handleOTPsubmit} 
+        targetedstate={HRState} 
+        statevalue={verificationData} 
+      />
     </>
   );
 };

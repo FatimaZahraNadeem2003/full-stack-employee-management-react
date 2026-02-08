@@ -2,8 +2,8 @@ import { EmployeeLogin } from "../pages/Employees/emplyoeelogin"
 import { EmployeeDashboard } from "../pages/Employees/employeedashboard"
 import { ProtectedRoutes } from "./protectedroutes"
 import { ForgotPassword } from "../pages/Employees/forgotpassword"
-import { ResetEmailConfirm } from "../pages/Employees/resetemailconfirm"
-import { ResetPassword } from "../pages/Employees/resetpassword"
+import { ResetEmailConfirmPage } from "../pages/Employees/resetemailconfirm"
+import { ResetPasswordPage } from "../pages/Employees/resetpassword"
 import { EntryPage } from "../pages/Employees/EntryPage"
 import { EmployeeProfilePage } from "../pages/Employees/DashboardChilds/profilepage"
 import { EmployeeLeavesPage } from "../pages/Employees/DashboardChilds/leavespage"
@@ -67,10 +67,10 @@ export const EmployeeRoutes = [
     },
     {
         path: "/auth/employee/reset-email-confirmation",
-        element: <ResetEmailConfirm />
+        element: <ResetEmailConfirmPage />
     },
     {
         path: "/auth/employee/resetpassword/:token",
-        element: <ResetPassword /> 
+        element: <ResetPasswordPage /> 
     },
 ]
