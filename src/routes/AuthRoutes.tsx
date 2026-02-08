@@ -12,7 +12,6 @@ import { ResetHRPasswordPage } from "../pages/HumanResources/resetpassword";
 import { ResetHRVerifyEmailPage } from "../pages/HumanResources/resetemail";
 
 export const AuthRoutes = [
-  // Employee Authentication Routes
   {
     path: "/auth/employee/signup",
     element: <EmployeeSignup />
@@ -34,7 +33,6 @@ export const AuthRoutes = [
     element: <ResetPassword />
   },
 
-  // HR Authentication Routes
   {
     path: "/auth/HR/signup",
     element: <HRSignupPage />
