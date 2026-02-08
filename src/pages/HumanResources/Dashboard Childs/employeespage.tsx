@@ -4,14 +4,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HandleGetHREmployees } from "../../../redux/Thunks/HREmployeesThunk";
 import { Loading } from "../../../components/common/loading.tsx";
-import { ListItems } from "../../../components/common/Dashboard/ListDesigns";
-import { ListContainer } from "../../../components/common/Dashboard/ListDesigns";
+
+
 import { AddEmployeesDialogBox } from "../../../components/common/Dashboard/dialogboxes";
 
 export const HREmployeesPage = () => {
   const dispatch = useDispatch();
   const HREmployeesState = useSelector((state: any) => state.HREmployeesPageReducer);
-  const table_headings = ["Full Name", "Email", "Department", "Contact Number", "Modify Employee"];
+  // const table_headings = ["Full Name", "Email", "Department", "Contact Number", "Modify Employee"];
 
   useEffect(() => {
     if (HREmployeesState.fetchData) {
