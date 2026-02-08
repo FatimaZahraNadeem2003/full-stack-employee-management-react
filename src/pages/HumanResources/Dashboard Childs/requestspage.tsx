@@ -1,12 +1,8 @@
 import { ListWrapper } from "../../../components/common/Dashboard/ListDesigns";
-import { HeadingBar } from "../../../components/common/Dashboard/ListDesigns";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Loading } from "../../../components/common/loading.tsx";
+
 import { ListContainer } from "../../../components/common/Dashboard/ListDesigns";
 
 export const HRRequestsPage = () => {
-  const dispatch = useDispatch();
   // const requestsState = useSelector((state) => state.RequestsReducer);
   const table_headings = ["Employee", "Request Type", "Description", "Date", "Status"];
 
@@ -27,7 +23,7 @@ export const HRRequestsPage = () => {
       </div>
       <div className="requests-data flex flex-col gap-4 md:pe-5 overflow-auto">
         <ListWrapper>
-          <HeadingBar table_layout={"grid-cols-5"} table_headings={table_headings} />
+          <div className="p-4 text-center text-gray-500">Request management features coming soon</div>
         </ListWrapper>
         <ListContainer>
           <div className="p-4 text-center text-gray-500">Request management features coming soon</div>
