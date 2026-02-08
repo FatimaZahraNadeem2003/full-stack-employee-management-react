@@ -39,11 +39,8 @@ export const HREmployeesPage = () => {
       </div>
       <div className="employees-data flex flex-col gap-4 md:pe-5 overflow-auto">
         <ListWrapper>
-          <HeadingBar table_layout={"grid-cols-5"} table_headings={table_headings} />
+          <div className="p-4 text-center text-gray-500">Employee data will be displayed here</div>
         </ListWrapper>
-        <ListContainer>
-          <ListItems TargetedState={HREmployeesState} />
-        </ListContainer>
       </div>
     </div>
   );
