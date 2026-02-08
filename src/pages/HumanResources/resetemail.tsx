@@ -1,11 +1,11 @@
 import { ResetVerifyEmailPage } from "../common/verify-email";
-import { SignIn } from "../../components/common/sign-in";
+
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar';
 import { CommonStateHandler } from "../../utils/commonhandler";
-import { HandleGetHumanResources, HandlePostHumanResources } from "../../redux/Thunks/HRThunk";
+import { HandlePostHumanResources } from "../../redux/Thunks/HRThunk";
 
 export const ResetHRVerifyEmailPage = () => {
   const HRState = useSelector((state: any) => state.HRReducer);
