@@ -15,7 +15,7 @@ export const HRLeavesPage = () => {
 
   useEffect(() => {
     console.log("Fetching all leaves...");
-    dispatch(HandleGetAllLeaves({ apiroute: "GETALL" }) as any);
+    dispatch(HandleGetLeaves({ apiroute: "GETALL" }) as any);
   }, []);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export const HRLeavesPage = () => {
   }
 
   const handleRefresh = () => {
-    dispatch(HandleGetAllLeaves({ apiroute: "GETALL" }) as any);
+    dispatch(HandleGetLeaves({ apiroute: "GETALL" }) as any);
   };
 
   return (
