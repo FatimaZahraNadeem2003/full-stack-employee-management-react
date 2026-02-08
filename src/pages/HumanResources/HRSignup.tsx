@@ -71,6 +71,7 @@ export const HRSignupPage = () => {
         targetedstate={HRState} 
         statevalue={signupform} 
         redirectpath="/auth/HR/login" 
+        errorpopup={errorpopup} 
       />
     </div>
   );
