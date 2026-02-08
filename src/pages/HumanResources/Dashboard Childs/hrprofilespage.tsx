@@ -1,12 +1,8 @@
 import { ListWrapper } from "../../../components/common/Dashboard/ListDesigns";
-import { HeadingBar } from "../../../components/common/Dashboard/ListDesigns";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Loading } from "../../../components/common/loading.tsx";
+
 import { ListContainer } from "../../../components/common/Dashboard/ListDesigns";
 
 export const HRProfilesPage = () => {
-  const dispatch = useDispatch();
   // const profilesState = useSelector((state) => state.HRProfilesReducer);
   const table_headings = ["Name", "Email", "Role", "Department", "Status"];
 
@@ -27,7 +23,7 @@ export const HRProfilesPage = () => {
       </div>
       <div className="profiles-data flex flex-col gap-4 md:pe-5 overflow-auto">
         <ListWrapper>
-          <HeadingBar table_layout={"grid-cols-5"} table_headings={table_headings} />
+          <div className="p-4 text-center text-gray-500">HR profiles management features coming soon</div>
         </ListWrapper>
         <ListContainer>
           <div className="p-4 text-center text-gray-500">HR profiles management features coming soon</div>

@@ -1,12 +1,8 @@
 import { ListWrapper } from "../../../components/common/Dashboard/ListDesigns";
-import { HeadingBar } from "../../../components/common/Dashboard/ListDesigns";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Loading } from "../../../components/common/loading.tsx";
+
 import { ListContainer } from "../../../components/common/Dashboard/ListDesigns";
 
 export const HRSalariesPage = () => {
-  const dispatch = useDispatch();
   // const salariesState = useSelector((state) => state.SalariesReducer);
   const table_headings = ["Employee", "Basic Salary", "Allowances", "Deductions", "Net Salary", "Status"];
 
@@ -27,7 +23,7 @@ export const HRSalariesPage = () => {
       </div>
       <div className="salaries-data flex flex-col gap-4 md:pe-5 overflow-auto">
         <ListWrapper>
-          <HeadingBar table_layout={"grid-cols-6"} table_headings={table_headings} />
+          <div className="p-4 text-center text-gray-500">Salary management features coming soon</div>
         </ListWrapper>
         <ListContainer>
           <div className="p-4 text-center text-gray-500">Salary management features coming soon</div>

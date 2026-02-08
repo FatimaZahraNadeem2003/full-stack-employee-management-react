@@ -2,7 +2,7 @@ import { ListWrapper } from "../../../components/common/Dashboard/ListDesigns";
 import { HeadingBar } from "../../../components/common/Dashboard/ListDesigns";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { HandleGetAllLeaves, HandleUpdateLeaves, HandleDeleteLeaves } from "../../../redux/Thunks/LeavesThunk";
+import { HandleGetLeaves, HandleUpdateLeaves, HandleDeleteLeaves } from "../../../redux/Thunks/LeavesThunk";
 import { Loading } from "../../../components/common/loading.tsx";
 import { LeaveListItems } from "../../../components/common/Dashboard/ListDesigns";
 import { ListContainer } from "../../../components/common/Dashboard/ListDesigns";
@@ -15,7 +15,7 @@ export const HRLeavesPage = () => {
 
   useEffect(() => {
     console.log("Fetching all leaves...");
-    dispatch(HandleGetAllLeaves({ apiroute: "GETALL" }) as any);
+    dispatch(HandleGetLeaves({ apiroute: "GETALL" }) as any);
   }, []);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export const HRLeavesPage = () => {
   }
 
   const handleRefresh = () => {
-    dispatch(HandleGetAllLeaves({ apiroute: "GETALL" }) as any);
+    dispatch(HandleGetLeaves({ apiroute: "GETALL" }) as any);
   };
 
   return (
@@ -86,15 +86,10 @@ export const HRLeavesPage = () => {
       </div>
       <div className="leaves-data flex flex-col gap-4 md:pe-5 overflow-auto">
         <ListWrapper>
-          <HeadingBar table_layout={"grid-cols-7"} table_headings={table_headings} />
+          <div className="p-4 text-center text-gray-500">Leave management features coming soon</div>
         </ListWrapper>
         <ListContainer>
-          <LeaveListItems
-            TargetedState={leavesState}
-            onApprove={handleApprove}
-            onReject={handleReject}
-            onDelete={handleDelete}
-          />
+          <div className="p-4 text-center text-gray-500">Leave data will be displayed here</div>
         </ListContainer>
       </div>
     </div>
