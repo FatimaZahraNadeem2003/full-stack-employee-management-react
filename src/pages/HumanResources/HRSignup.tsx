@@ -9,7 +9,7 @@ import { HandlePostHumanResources } from "../../redux/Thunks/HRThunk";
 
 export const HRSignupPage = () => {
   const HRState = useSelector((state: any) => state.HRReducer);
-  const [errorpopup, seterrorpopup] = useState(false);
+  // const [errorpopup, seterrorpopup] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loadingbar = useRef(null);
