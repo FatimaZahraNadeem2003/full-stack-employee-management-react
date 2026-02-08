@@ -1,5 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 interface ListWrapperProps {
     children: React.ReactNode
@@ -38,6 +37,25 @@ export const HeadingBar = ({ title, actions }: HeadingBarProps) => {
 }
 
 export const ListItems = ({ data, columns, renderRow }: ListItemsProps) => {
+    return (
+        <div className="list-items">
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        {columns.map((column, index) => (
+                            <TableHead key={index}>{column}</TableHead>
+                        ))}
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {data.map((item, index) => renderRow(item, index))}
+                </TableBody>
+            </Table>
+        </div>
+    )
+}
+
+export const LeaveListItems = ({ data, columns, renderRow }: ListItemsProps) => {
     return (
         <div className="list-items">
             <Table>

@@ -1,23 +1,8 @@
 import { ListWrapper } from "../../../components/common/Dashboard/ListDesigns";
-import { HeadingBar } from "../../../components/common/Dashboard/ListDesigns";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { HandleGetEmployees } from "../../../redux/Thunks/EmployeeThunk";
-import { Loading } from "../../../components/common/loading";
+
+
 
 export const EmployeeDepartmentPage = () => {
-    const dispatch = useDispatch();
-    const employeeState = useSelector((state: any) => state.employeereducer);
-
-    useEffect(() => {
-        dispatch(HandleGetEmployees({ apiroute: "DEPARTMENT" }));
-    }, []);
-
-    if (employeeState.isLoading) {
-        return (
-            <Loading />
-        );
-    }
 
     return (
         <div className="department-page-content w-full mx-auto my-10 flex flex-col gap-5 h-[94%]">

@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react"
-import { SignIn } from "../../components/common/sign-in.jsx"
+import { SignIn } from "../../components/common/sign-in.tsx"
 import { useDispatch, useSelector } from "react-redux"
-import { HandlePostEmployees, HandleGetEmployees } from "../../redux/Thunks/EmployeeThunk.js"
+import { HandlePostEmployees, HandleGetEmployees } from "../../redux/Thunks/EmployeeThunk.ts"
 import LoadingBar from 'react-top-loading-bar'
 import { useNavigate } from 'react-router-dom'
-import { CommonStateHandler } from "../../utils/commonhandler.js"
+import { CommonStateHandler } from "../../utils/commonhandler.ts"
 
 export const EmployeeLogin = () => {
 

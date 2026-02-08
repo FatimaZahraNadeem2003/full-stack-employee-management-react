@@ -3,9 +3,7 @@ import {
     SidebarContent,
     SidebarFooter,
     SidebarGroup,
-    SidebarHeader,
     SidebarGroupContent,
-    SidebarGroupLabel,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
@@ -14,9 +12,10 @@ import {
 import { NavLink, useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { HandlePostEmployees } from "../../redux/Thunks/EmployeeThunk"
+import type { AppDispatch } from "../../redux/app/store"
 
 function LogoutButton() {
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleLogout = () => {

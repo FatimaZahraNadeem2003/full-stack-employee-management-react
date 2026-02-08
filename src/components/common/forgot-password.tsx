@@ -1,8 +1,6 @@
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface ForgotPasswordProps {
     image: string
@@ -12,7 +10,7 @@ interface ForgotPasswordProps {
     statevalue: any
 }
 
-export const ForgotPassword = ({ image, handleforgotpasswordform, handleforgotpasswordsubmit, targetedstate, statevalue }: ForgotPasswordProps) => {
+export const ForgotPassword = ({ image, handleforgotpasswordform, handleforgotpasswordsubmit, statevalue }: ForgotPasswordProps) => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-8">

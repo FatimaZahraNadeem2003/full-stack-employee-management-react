@@ -3,8 +3,8 @@ import { HeadingBar } from "../../../components/common/Dashboard/ListDesigns";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HandleGetEmployees, HandlePatchEmployees } from "../../../redux/Thunks/EmployeeThunk.js";
-import { Loading } from "../../../components/common/loading.jsx";
-import { Button } from "../../../components/ui/button.jsx";
+import { Loading } from "../../../components/common/loading.tsx";
+import { Button } from "../../../components/ui/button";
 
 export const EmployeeProfilePage = () => {
     const dispatch = useDispatch();
@@ -42,12 +42,10 @@ export const EmployeeProfilePage = () => {
     };
 
     const handleSave = () => {
-        // Dispatch action to update employee data
         dispatch(HandlePatchEmployees({ 
             apiroute: "UPDATE_PROFILE", 
             data: editData
         }) as any).then(() => {
-            // Refetch the updated profile data
             dispatch(HandleGetEmployees({ apiroute: "GET" }) as any);
         });
         setIsEditing(false);
@@ -58,7 +56,6 @@ export const EmployeeProfilePage = () => {
     };
 
     const handleCancel = () => {
-        // Reset edit data to original values
         if (employeeState.data) {
             setEditData({
                 firstname: employeeState.data.firstname || "",
