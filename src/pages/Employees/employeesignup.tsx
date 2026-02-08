@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux"
 import LoadingBar from 'react-top-loading-bar'
 import { useNavigate } from 'react-router-dom'
 import { CommonStateHandler } from "../../utils/commonhandler.js"
-import { HandlePostEmployees, HandleGetEmployees } from "../../redux/Thunks/EmployeeThunk.js"
+import { HandlePostEmployees } from "../../redux/Thunks/EmployeeThunk.js"
 
-export const EmployeeSignupPage = () => {
+export const EmployeeSignup = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const loadingbar = useRef(null)

@@ -7,7 +7,7 @@ import { PanelLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "./collapsible"
+import { Collapsible } from "@/components/ui/collapsible"
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipArrow } from "@/components/ui/tooltip"
 
 const Sidebar = React.forwardRef<
@@ -324,7 +324,7 @@ const SidebarMenuButton = React.forwardRef<
   React.ComponentProps<"button"> & {
     asChild?: boolean
     isActive?: boolean
-    tooltip?: string | React.ComponentProps<typeof TooltipContent>
+    tooltip?: string | React.ComponentProps<typeof TooltipPrimitive.Content>
     variant?: "default" | "outline"
     size?: "default" | "sm" | "lg"
   }

@@ -47,3 +47,6 @@ export const LeavesEndPoints: { [key: string]: any } = {
     UPDATE: "/api/v1/leave/HR-update-leave",
     DELETE: (id: string) => `/api/v1/leave/delete-leave/${id}`
 }
+
+export const API_ENDPOINTS = {
+};

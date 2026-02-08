@@ -3,7 +3,7 @@ import { HeadingBar } from "../../../components/common/Dashboard/ListDesigns";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HandleGetEmployees } from "../../../redux/Thunks/EmployeeThunk";
-import { Loading } from "../../../components/common/loading";
+import { Loading } from "../../../components/common/loading.tsx";
 
 export const EmployeeDepartmentPage = () => {
     const dispatch = useDispatch();

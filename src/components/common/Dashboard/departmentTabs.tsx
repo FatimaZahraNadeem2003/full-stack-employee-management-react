@@ -5,7 +5,7 @@ interface DepartmentTabsProps {
     defaultValue?: string
 }
 
-export const DepartmentTabs = ({ tabs, defaultValue }: DepartmentTabsProps) => {
+export const HRDepartmentTabs = ({ tabs, defaultValue }: DepartmentTabsProps) => {
     return (
         <Tabs defaultValue={defaultValue || tabs[0]?.value} className="w-full">
             <TabsList>

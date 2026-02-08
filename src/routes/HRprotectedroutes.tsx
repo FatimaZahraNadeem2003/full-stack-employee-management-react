@@ -2,7 +2,7 @@ import { HandleGetHumanResources } from "../redux/Thunks/HRThunk"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
-import { Loading } from "../components/common/loading"
+import { Loading } from "../components/common/loading.tsx"
 
 export const HRProtectedRoutes = ({ children }: { children: React.ReactNode }) => {
     const navigate = useNavigate()

@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { ForgotPassword } from "../../components/common/forgot-password";
+import { ForgotPassword as ForgotPasswordComponent } from "../../components/common/forgot-password";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingBar from 'react-top-loading-bar';
 import { useNavigate } from 'react-router-dom';
 import { CommonStateHandler } from "../../utils/commonhandler.js";
-import { HandlePostEmployees, HandleGetEmployees } from "../../redux/Thunks/EmployeeThunk.js";
+import { HandlePostEmployees } from "../../redux/Thunks/EmployeeThunk.js";
 
-export const EmployeeForgotPassword = () => {
+export const ForgotPassword = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const loadingbar = useRef(null);
@@ -48,7 +48,7 @@ export const EmployeeForgotPassword = () => {
         <div className="employee-forgot-password-container">
             <LoadingBar ref={loadingbar} />
             <div className="employee-forgot-password-content flex justify-center items-center h-[100vh]">
-                <ForgotPassword 
+                <ForgotPasswordComponent 
                     image={"../../src/assets/Employee-Welcome.jpg"} 
                     handleforgotpasswordform={handleforgotpasswordform} 
                     handleforgotpasswordsubmit={handleforgotpasswordsubmit} 
