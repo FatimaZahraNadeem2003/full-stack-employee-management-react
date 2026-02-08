@@ -1,5 +1,5 @@
 import { ListWrapper } from "../../../components/common/Dashboard/ListDesigns";
-import { HeadingBar } from "../../../components/common/Dashboard/ListDesigns";
+
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HandleGetHREmployees } from "../../../redux/Thunks/HREmployeesThunk";
