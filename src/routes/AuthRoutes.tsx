@@ -1,7 +1,7 @@
 import { EmployeeLogin } from "../pages/Employees/emplyoeelogin";
 import { ForgotPassword } from "../pages/Employees/forgotpassword";
-import { ResetEmailConfirmPage } from "../pages/Employees/resetemailconfirm";
-import { ResetPasswordPage } from "../pages/Employees/resetpassword";
+import { ResetEmailConfirmPage } from "../pages/Employees/resetemailconfirm.tsx";
+import { ResetPasswordPage } from "../pages/Employees/resetpassword.tsx";
 import { EmployeeSignup } from "../pages/Employees/employeesignup";
 import { HRSignupPage } from "../pages/HumanResources/HRSignup";
 import { HRLogin } from "../pages/HumanResources/HRlogin";
