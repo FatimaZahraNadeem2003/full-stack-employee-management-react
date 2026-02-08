@@ -23,7 +23,7 @@ export const ResetVerifyEmailPage = ({
     <>
       <div className="verify-email-container">
         <div className="verify-email-content h-[100vh] min-[250px]:flex-col min-[250px]:items-center md:flex-row flex justify-center">
-          {targetstate.error.status ? <ErrorPopup error={targetstate.error.message} /> : null}
+          {targetstate.error.status ? <ErrorPopup isOpen={true} onClose={() => {}} title="Error" message={targetstate.error.message} /> : null}
           <div className="img flex justify-center items-center">
             <img src="../../src/assets/verify-email.png" alt="" className="min-[250px]:max-w-xs lg:max-w-sm 2xl:max-w-md" />
           </div>

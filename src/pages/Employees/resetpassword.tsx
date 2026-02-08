@@ -1,12 +1,11 @@
-import { Reset_Password } from "../../components/common/reset-password.tsx";
+import { ResetPassword } from "../../components/common/reset-password.tsx";
 import { useState, useEffect, useRef } from "react";
-import { SignIn } from "../../components/common/sign-in.tsx";
 import { useDispatch, useSelector } from "react-redux";
-import { HandlePostEmployees, HandleGetEmployees } from "../../redux/Thunks/EmployeeThunk.ts";
+import { HandlePostEmployees } from "../../redux/Thunks/EmployeeThunk.ts";
 import LoadingBar from 'react-top-loading-bar';
 import { useNavigate, useParams } from 'react-router-dom';
 
-export const ResetPassword = () => {
+export const ResetPasswordPage = () => {
   const employeestate = useSelector((state: any) => state.employeereducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -54,7 +53,13 @@ export const ResetPassword = () => {
     <div className="reset-password-container">
       <LoadingBar ref={loadingbar} />
       <div className="reset-password-content flex justify-center items-center h-[100vh]">
-        <Reset_Password handlepasswordsubmit={handlepasswordsubmit} handlepasswordform={handlepasswordform} passworderror={passworderror} targetstate={employeestate}/>
+        <ResetPassword 
+          image={"../../src/assets/verify-email.png"} 
+          handleresetpasswordform={handlepasswordform} 
+          handleresetpasswordsubmit={handlepasswordsubmit} 
+          targetedstate={employeestate} 
+          statevalue={passwordform} 
+        />
       </div>
     </div>
   );
