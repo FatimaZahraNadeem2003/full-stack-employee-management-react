@@ -11,9 +11,13 @@ export const AddEmployeesDialogBox = () => {
 export const RemoveEmployeeFromDepartmentDialogBox = () => {
     const dispatch = useDispatch()
 
-    const RemoveEmployee = (EMID: string) => {
-        dispatch(HandleDeleteHRDepartments({ apiroute: "DELETE", data: { departmentID: "", employeeIDArray: [EMID], action: "delete-employee" } }) as any)
-    }
+    // const RemoveEmployee = (EMID: string) => {
+    //     dispatch(HandleDeleteHRDepartments({ apiroute: "DELETE", data: { departmentID: "", employeeIDArray: [EMID], action: "delete-employee" } }) as any)
+    // }
+
+    return (
+        <div>Remove Employee Dialog</div>
+    )
 
     return (
         <div>Remove Employee Dialog</div>
@@ -22,9 +26,10 @@ export const RemoveEmployeeFromDepartmentDialogBox = () => {
 
 export const DeleteEmployeeDialogBox = () => {
     const dispatch = useDispatch()
-    const DeleteEmployee = (EMID: string) => {
-        dispatch(HandleDeleteHREmployees({ apiroute: `DELETE.${EMID}` }) as any)
-    }
+    // const DeleteEmployee = (EMID: string) => {
+    //     dispatch(HandleDeleteHREmployees({ apiroute: `DELETE.${EMID}` }) as any)
+    // }
+
     return (
         <div>Delete Employee Dialog</div>
     )
