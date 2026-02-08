@@ -13,7 +13,7 @@ export const ResetHRPasswordPage = () => {
   const navigate = useNavigate();
   const loadingbar = useRef(null);
   const { token } = useParams<{ token: string }>();
-  const [passworderror, setpassworderror] = useState(false);
+  // const [passworderror, setpassworderror] = useState(false);
   const [passwordform, setpasswordform] = useState({
     password: "",
     repeatpassword: ""
@@ -25,12 +25,12 @@ export const ResetHRPasswordPage = () => {
       if (loadingbar.current) {
         (loadingbar.current as any).continuousStart();
       }
-      setpassworderror(false);
+
       dispatch(HandlePostHumanResources({ apiroute: token, data: { password: passwordform.password }, type: "resetpassword" }) as any);
     }
     else {
       e.preventDefault();
-      setpassworderror(true);
+
     }
   };
 
